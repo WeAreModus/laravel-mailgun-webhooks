@@ -1,8 +1,7 @@
+<p align="center"><img src="https://modus-bucket.s3.amazonaws.com/modus-branding-red-log-white-text.png" width="400"></p>
+
 # Handle Mailgun Webhooks in a Laravel application
 
-![https://github.com/WeAreModus/laravel-mailgun-webhooks/actions](https://github.com/WeAreModus/laravel-mailgun-webhooks/workflows/Laravel/badge.svg)
-![https://github.styleci.io/repos/230519748](https://github.styleci.io/repos/230519748/shield)
-![https://scrutinizer-ci.com/g/binary-cats/laravel-mailgun-webhooks/](https://scrutinizer-ci.com/g/binary-cats/laravel-mailgun-webhooks/badges/quality-score.png?b=master)
 
 [Mailgun](https://mailgun.com) can notify your application of mail events using webhooks. This package can help you handle those webhooks. Out of the box it will verify the Mailgun signature of all incoming requests. All valid calls will be logged to the database. You can easily define jobs or events that should be dispatched when specific events hit your app.
 
