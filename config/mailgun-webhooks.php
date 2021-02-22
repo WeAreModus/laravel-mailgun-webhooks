@@ -16,7 +16,7 @@ return [
      * https://documentation.mailgun.com/en/latest/api-webhooks.html#webhooks.
      */
     'jobs' => [
-        // 'delivered' => \BinaryCats\MailgunWebhooks\Jobs\HandleDelivered::class,
+        // 'delivered' => \WeAreModus\MailgunWebhooks\Jobs\HandleDelivered::class,
     ],
 
     /*
@@ -27,7 +27,7 @@ return [
 
     /*
      * The classname of the model to be used. The class should equal or extend
-     * BinaryCats\MailgunWebhooks\ProcessMailgunWebhookJob
+     * WeAreModus\MailgunWebhooks\ProcessMailgunWebhookJob
      */
-    'process_webhook_job' => \BinaryCats\MailgunWebhooks\ProcessMailgunWebhookJob::class,
+    'process_webhook_job' => \WeAreModus\MailgunWebhooks\ProcessMailgunWebhookJob::class,
 ];

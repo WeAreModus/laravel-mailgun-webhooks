@@ -1,6 +1,6 @@
 <?php
 
-namespace BinaryCats\MailgunWebhooks\Tests;
+namespace WeAreModus\MailgunWebhooks\Tests;
 
 use Spatie\WebhookClient\Models\WebhookCall;
 

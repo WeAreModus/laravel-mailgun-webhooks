@@ -1,19 +1,24 @@
 {
-    "name": "binary-cats/laravel-mailgun-webhooks",
+    "name": "we-are-modus/laravel-mailgun-webhooks",
     "description": "Handle Mailgun webhooks in a Laravel application",
     "keywords": [
-        "binary-cats",
         "laravel",
         "mailgun",
         "webhooks"
     ],
-    "homepage": "https://github.com/binary-cats/laravel-mailgun-webhooks",
+    "homepage": "https://github.com/WeAreModus/laravel-mailgun-webhooks",
     "license": "MIT",
     "authors": [
         {
             "name": "Cyrill Kalita",
             "email": "cyrill.kalita@gmail.com",
             "homepage": "https://github.com/binary-cats",
+            "role": "Developer"
+        },
+        {
+            "name": "Dalton Pierce",
+            "email": "dalton@wearemodus.com",
+            "homepage": "https://github.com/WeAreModus",
             "role": "Developer"
         }
     ],
@@ -26,18 +31,21 @@
         "orchestra/testbench": "~3.8.0|^4.0|^5.0|^6.0",
         "phpunit/phpunit": "^8.2|^9.0"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/Users/dev/Synchronized/Up2Code/Projects/Tether/packages/laravel-mailgun-webhooks"
+        }
+    ],
     "autoload": {
         "psr-4": {
-            "BinaryCats\\MailgunWebhooks\\": "src"
+            "WeAreModus\\MailgunWebhooks\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BinaryCats\\MailgunWebhooks\\Tests\\": "tests"
+            "WeAreModus\\MailgunWebhooks\\Tests\\": "tests"
         }
-    },
-    "suggest": {
-            "binary-cats/laravel-mail-helpers": "^6.0"
     },
     "scripts": {
         "test": "vendor/bin/phpunit --color=always",
@@ -56,7 +64,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "BinaryCats\\MailgunWebhooks\\MailgunWebhooksServiceProvider"
+                "WeAreModus\\MailgunWebhooks\\MailgunWebhooksServiceProvider"
             ]
         }
     }

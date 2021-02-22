@@ -1,6 +1,6 @@
 <?php
 
-namespace BinaryCats\MailgunWebhooks;
+namespace WeAreModus\MailgunWebhooks;
 
 class Webhook
 {
@@ -10,7 +10,7 @@ class Webhook
      * @param  $payload
      * @param  array $signature
      * @param  string $secret
-     * @return BinaryCats\MailgunWebhooks\Event
+     * @return WeAreModus\MailgunWebhooks\Event
      */
     public static function constructEvent(array $payload, array $signature, string $secret): Event
     {

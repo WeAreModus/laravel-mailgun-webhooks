@@ -1,8 +1,8 @@
 <?php
 
-namespace BinaryCats\MailgunWebhooks\Tests;
+namespace WeAreModus\MailgunWebhooks\Tests;
 
-use BinaryCats\MailgunWebhooks\MailgunWebhooksServiceProvider;
+use WeAreModus\MailgunWebhooks\MailgunWebhooksServiceProvider;
 use CreateWebhookCallsTable;
 use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;

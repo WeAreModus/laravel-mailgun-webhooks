@@ -1,6 +1,6 @@
 <?php
 
-namespace BinaryCats\MailgunWebhooks;
+namespace WeAreModus\MailgunWebhooks;
 
 use Exception;
 use Illuminate\Http\Request;

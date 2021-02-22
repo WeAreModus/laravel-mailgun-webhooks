@@ -1,6 +1,6 @@
 # Handle Mailgun Webhooks in a Laravel application
 
-![https://github.com/binary-cats/laravel-mailgun-webhooks/actions](https://github.com/binary-cats/laravel-mailgun-webhooks/workflows/Laravel/badge.svg)
+![https://github.com/WeAreModus/laravel-mailgun-webhooks/actions](https://github.com/WeAreModus/laravel-mailgun-webhooks/workflows/Laravel/badge.svg)
 ![https://github.styleci.io/repos/230519748](https://github.styleci.io/repos/230519748/shield)
 ![https://scrutinizer-ci.com/g/binary-cats/laravel-mailgun-webhooks/](https://scrutinizer-ci.com/g/binary-cats/laravel-mailgun-webhooks/badges/quality-score.png?b=master)
 
@@ -20,14 +20,14 @@ This package is an almost line-to-line adapted copy of absolutely amazing [spati
 You can install the package via composer:
 
 ```bash
-composer require binary-cats/laravel-mailgun-webhooks
+composer require we-are-modus/laravel-mailgun-webhooks
 ```
 
 The service provider will automatically register itself.
 
 You must publish the config file with:
 ```bash
-php artisan vendor:publish --provider="BinaryCats\MailgunWebhooks\MailgunWebhooksServiceProvider" --tag="config"
+php artisan vendor:publish --provider="WeAreModus\MailgunWebhooks\MailgunWebhooksServiceProvider" --tag="config"
 ```
 
 This is the contents of the config file that will be published at `config/mailgun-webhooks.php`:
@@ -49,7 +49,7 @@ return [
      * https://documentation.mailgun.com/en/latest/api-webhooks.html#webhooks.
      */
     'jobs' => [
-        // 'delivered' => \BinaryCats\MailgunWebhooks\Jobs\HandleDelivered::class,
+        // 'delivered' => \WeAreModus\MailgunWebhooks\Jobs\HandleDelivered::class,
     ],
 
     /*
@@ -60,9 +60,9 @@ return [
 
     /*
      * The classname of the model to be used. The class should equal or extend
-     * BinaryCats\MailgunWebhooks\ProcessMailgunWebhookJob
+     * WeAreModus\MailgunWebhooks\ProcessMailgunWebhookJob
      */
-    'process_webhook_job' => \BinaryCats\MailgunWebhooks\ProcessMailgunWebhookJob::class,
+    'process_webhook_job' => \WeAreModus\MailgunWebhooks\ProcessMailgunWebhookJob::class,
 ];
 ```
 
@@ -107,7 +107,7 @@ Mailgun will sign all requests hitting the webhook url of your app. This package
 
 Unless something goes terribly wrong, this package will always respond with a `200` to webhook requests. Sending a `200` will prevent Mailgun from resending the same event over and over again. All webhook requests with a valid signature will be logged in the `webhook_calls` table. The table has a `payload` column where the entire payload of the incoming webhook is saved.
 
-If the signature is not valid, the request will not be logged in the `webhook_calls` table but a `BinaryCats\MailgunWebhooks\Exceptions\WebhookFailed` exception will be thrown.
+If the signature is not valid, the request will not be logged in the `webhook_calls` table but a `WeAreModus\MailgunWebhooks\Exceptions\WebhookFailed` exception will be thrown.
 If something goes wrong during the webhook request the thrown exception will be saved in the `exception` column. In that case the controller will send a `500` instead of `200`.
 
 There are two ways this package enables you to handle webhook requests: you can opt to queue a job or listen to the events the package will fire.
@@ -217,19 +217,19 @@ All incoming webhook requests are written to the database. This is incredibly va
 
 ```php
 use Spatie\WebhookClient\Models\WebhookCall;
-use BinaryCats\MailgunWebhooks\ProcessMailgunWebhookJob;
+use WeAreModus\MailgunWebhooks\ProcessMailgunWebhookJob;
 
 dispatch(new ProcessMailgunWebhookJob(WebhookCall::find($id)));
 ```
 
 ### Performing custom logic
 
-You can add some custom logic that should be executed before and/or after the scheduling of the queued job by using your own job class. You can do this by specifying your own job class in the `process_webhook_job` key of the `mailgun-webhooks` config file. The class should extend `BinaryCats\MailgunWebhooks\ProcessMailgunWebhookJob`.
+You can add some custom logic that should be executed before and/or after the scheduling of the queued job by using your own job class. You can do this by specifying your own job class in the `process_webhook_job` key of the `mailgun-webhooks` config file. The class should extend `WeAreModus\MailgunWebhooks\ProcessMailgunWebhookJob`.
 
 Here's an example:
 
 ```php
-use BinaryCats\MailgunWebhooks\ProcessMailgunWebhookJob;
+use WeAreModus\MailgunWebhooks\ProcessMailgunWebhookJob;
 
 class MyCustomMailgunWebhookJob extends ProcessMailgunWebhookJob
 {
@@ -256,7 +256,7 @@ Route::mailgunWebhooks('webhooks/mailgun/{configKey}');
 Alternatively, if you are manually defining the route, you can add `configKey` like so:
 
 ```php
-Route::post('webhooks/mailgun/{configKey}', 'BinaryCats\MailgunWebhooks\MailgunWebhooksController');
+Route::post('webhooks/mailgun/{configKey}', 'WeAreModus\MailgunWebhooks\MailgunWebhooksController');
 ```
 
 If this route parameter is present the verify middleware will look for the secret using a different config key, by appending the given the parameter value to the default config key. E.g. If Mailgun posts to `webhooks/mailgun/my-named-secret` you'd add a new config named `signing_secret_my-named-secret`.
@@ -284,28 +284,12 @@ Please see [CHANGELOG](CHANGELOG.md) for more information about what has changed
 composer test
 ```
 
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security
-
-If you discover any security related issues, please email cyrill.kalita@gmail.com instead of using issue tracker.
-
-## Postcardware
-
-You're free to use this package, but if it makes it to your production environment we highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
-
 ## Credits
 
 - [Cyrill Kalita](https://github.com/binary-cats)
-- [All Contributors](../../contributors)
+- [Dalton Pierce](https://github.com/dnnp2011)
 
 Big shout-out to [Spatie](https://spatie.be/) for their work, which is a huge inspiration.
-
-## Support us
-
-Binary Cats is a webdesign agency based in Illinois, US.
 
 ## License
 

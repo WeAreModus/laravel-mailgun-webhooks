@@ -1,8 +1,8 @@
 <?php
 
-namespace BinaryCats\MailgunWebhooks;
+namespace WeAreModus\MailgunWebhooks;
 
-use BinaryCats\MailgunWebhooks\Exceptions\WebhookFailed;
+use WeAreModus\MailgunWebhooks\Exceptions\WebhookFailed;
 use Illuminate\Support\Arr;
 use Spatie\WebhookClient\ProcessWebhookJob;
 

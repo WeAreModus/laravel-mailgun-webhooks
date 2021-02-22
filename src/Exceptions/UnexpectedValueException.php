@@ -1,6 +1,6 @@
 <?php
 
-namespace BinaryCats\MailgunWebhooks\Exceptions;
+namespace WeAreModus\MailgunWebhooks\Exceptions;
 
 use UnexpectedValueException as BaseUnexpectedValueException;
 

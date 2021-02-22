@@ -1,14 +1,14 @@
 <?php
 
-namespace BinaryCats\MailgunWebhooks\Tests;
+namespace WeAreModus\MailgunWebhooks\Tests;
 
-use BinaryCats\MailgunWebhooks\ProcessMailgunWebhookJob;
+use WeAreModus\MailgunWebhooks\ProcessMailgunWebhookJob;
 use Illuminate\Support\Facades\Event;
 use Spatie\WebhookClient\Models\WebhookCall;
 
 class MailgunWebhookCallTest extends TestCase
 {
-    /** @var \BinaryCats\MailgunWebhooks\ProcessMailgunWebhookJob */
+    /** @var \WeAreModus\MailgunWebhooks\ProcessMailgunWebhookJob */
     public $processMailgunWebhookJob;
 
     /** @var \Spatie\WebhookClient\Models\WebhookCall */

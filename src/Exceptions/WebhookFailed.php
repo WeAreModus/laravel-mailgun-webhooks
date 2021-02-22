@@ -1,6 +1,6 @@
 <?php
 
-namespace BinaryCats\MailgunWebhooks\Exceptions;
+namespace WeAreModus\MailgunWebhooks\Exceptions;
 
 use Exception;
 use Spatie\WebhookClient\Models\WebhookCall;

@@ -1,6 +1,6 @@
 <?php
 
-namespace BinaryCats\MailgunWebhooks;
+namespace WeAreModus\MailgunWebhooks;
 
 use Illuminate\Http\Request;
 use Spatie\WebhookClient\WebhookConfig;

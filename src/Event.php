@@ -1,8 +1,8 @@
 <?php
 
-namespace BinaryCats\MailgunWebhooks;
+namespace WeAreModus\MailgunWebhooks;
 
-use BinaryCats\MailgunWebhooks\Contracts\WebhookEvent;
+use WeAreModus\MailgunWebhooks\Contracts\WebhookEvent;
 
 class Event implements WebhookEvent
 {

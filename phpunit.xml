@@ -10,7 +10,7 @@
          processIsolation="true"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Binary Cats Test Suite">
+        <testsuite name="Modus Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

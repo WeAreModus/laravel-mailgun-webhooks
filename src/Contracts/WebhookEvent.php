@@ -1,6 +1,6 @@
 <?php
 
-namespace BinaryCats\MailgunWebhooks\Contracts;
+namespace WeAreModus\MailgunWebhooks\Contracts;
 
 interface WebhookEvent
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace BinaryCats\MailgunWebhooks;
+namespace WeAreModus\MailgunWebhooks;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -21,7 +21,7 @@ class MailgunWebhooksServiceProvider extends ServiceProvider
         }
 
         Route::macro('mailgunWebhooks', function ($url) {
-            return Route::post($url, '\BinaryCats\MailgunWebhooks\MailgunWebhooksController');
+            return Route::post($url, '\WeAreModus\MailgunWebhooks\MailgunWebhooksController');
         });
     }
 
