@@ -1,5 +1,7 @@
 {
     "name": "we-are-modus/laravel-mailgun-webhooks",
+    "version": "1.0.0",
+    "minimum-stability": "stable",
     "description": "Handle Mailgun webhooks in a Laravel application",
     "keywords": [
         "laravel",
@@ -28,15 +30,10 @@
         "spatie/laravel-webhook-client": "^2.0"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.8.0|^4.0|^5.0|^6.0",
-        "phpunit/phpunit": "^8.2|^9.0"
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^8.2|^9.0",
+        "friendsofphp/php-cs-fixer":  "^2.18"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/Users/dev/Synchronized/Up2Code/Projects/Tether/packages/laravel-mailgun-webhooks"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "WeAreModus\\MailgunWebhooks\\": "src"

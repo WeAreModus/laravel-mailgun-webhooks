@@ -8,7 +8,7 @@ matrix:
     fast_finish: true
     include:
         - php: 8.0
-          env: LARAVEL='8.*' TESTBENCH='5.*' COMPOSER_FLAGS='--prefer-stable'
+          env: LARAVEL='8.*' TESTBENCH='6.*' COMPOSER_FLAGS='--prefer-stable'
 
 before_install:
     - travis_retry composer self-update
