@@ -18,8 +18,8 @@
         }
     ],
     "require": {
-        "php": "^7.2",
-        "illuminate/support": "~5.8.0|^6.0|^7.0|^8.0",
+        "php": "^8.0",
+        "illuminate/support": "^8.0",
         "spatie/laravel-webhook-client": "^2.0"
     },
     "require-dev": {

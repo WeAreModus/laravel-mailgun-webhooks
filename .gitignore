@@ -3,3 +3,7 @@ composer.lock
 docs
 vendor
 coverage.clover
+.idea
+**/.idea
+.phpunit.result.cache
+**/.DS_STORE
