@@ -26,12 +26,11 @@
     ],
     "require": {
         "php": "^8.0",
-        "illuminate/support": "^8.0",
         "spatie/laravel-webhook-client": "^2.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.0",
-        "phpunit/phpunit": "^8.2|^9.0",
+        "orchestra/testbench": "^5.0|^6.0",
+        "phpunit/phpunit": "^9.3",
         "friendsofphp/php-cs-fixer":  "^2.18"
     },
     "autoload": {
